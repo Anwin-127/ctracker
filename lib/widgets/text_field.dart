@@ -1,4 +1,4 @@
-import 'package:ctracker/constants/fonts.dart';
+import 'package:ctracker/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,7 +8,7 @@ class CustomTextField extends StatefulWidget {
   double? containerWidth;
   int? maxLength;
   String labelText;
-  double? fontsize;
+  double? fontSize;
   double? labelSize;
   int? maxLines;
   String hintText;
@@ -25,7 +25,7 @@ class CustomTextField extends StatefulWidget {
       required this.hintText,
       required this.labelText,
       this.maxLines,
-      this.fontsize})
+      this.fontSize})
       : super(key: key);
 
   @override
@@ -49,13 +49,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
               child: Text(
                 widget.labelText,
                 style: GoogleFonts.poppins(
-                    fontSize: labelSize,
-                    color: labelColor,
-                    fontWeight: labelWeight),
+                    fontSize: kLabelSize,
+                    color: kLabelColor,
+                    fontWeight: kLabelWeight),
               ),
             ),
             TextFormField(
-              style: TextStyle(fontSize: widget.fontsize),
+              style: TextStyle(fontSize: widget.fontSize),
               controller: widget.controller,
               maxLines: widget.maxLines,
               maxLength: widget.maxLength,
@@ -73,10 +73,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
                     textStyle: const TextStyle(color: Colors.black38)),
                 contentPadding:
                     const EdgeInsets.only(left: 14, bottom: 8, top: 8),
-                focusedBorder:  OutlineInputBorder(
+                focusedBorder:  const OutlineInputBorder(
                   borderSide:
-                      const BorderSide(color: Color.fromARGB(255, 76, 80, 78)),
-                  borderRadius: BorderRadius.circular(10),
+                      BorderSide(color: Colors.blueGrey),
+                  // borderRadius: BorderRadius.circular(10),
                 ),
                 enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(
